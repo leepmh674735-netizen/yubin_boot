@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>    
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,16 +14,37 @@
 		<div id="content-wrapper" class="d-flex flex-column">
 			<div id="content">
 				<c:import url="/WEB-INF/views/temp/topbar.jsp"></c:import>
-				
+
 				<!-- Begin Page Content -->
-                <div class="container-fluid">
+				<div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+					<!-- Page Heading -->
+					<h1 class="h3 mb-4 text-gray-800">Join Page</h1>
 
-                </div>
-                <!-- End Page container-fluid -->
-                
+					<div class="col-lg-5 col-sm-12">
+						<form action="./join" method="post">
+							<div class="form-group">
+								<label for="name">Name</label> 
+								<input type="text" name="name" class="form-control" id="name"> 
+							</div>
+							<div class="form-group">
+								<label for="age">Age</label> 
+								<input type="text" class="form-control" name="age" id="age"> 
+							</div>							
+							<div class="form-group">
+								<label for="birth">Birth</label> 
+								<input type="date" class="form-control" name="birth" id="birth">
+							</div>
+
+
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</form>
+
+					</div>
+
+				</div>
+				<!-- End Page container-fluid -->
+
 			</div>
 			<!-- End page Content -->
 			<c:import url="/WEB-INF/views/temp/footer.jsp"></c:import>
@@ -31,7 +52,7 @@
 		<!-- End Content wrapper -->
 	</div>
 	<!-- End Wrapper -->
-	
+
 	<c:import url="/WEB-INF/views/temp/footer_script.jsp"></c:import>
 
 </body>
