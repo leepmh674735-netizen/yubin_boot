@@ -22,7 +22,7 @@
                     <h1 class="h3 mb-4 text-gray-800">Create Page</h1>
                     
                     <div>
-	                    <form method="post">
+	                    <form action="./update" method="post">
 						  <div class="form-group">
 						    <label for="departmentNo">학과번호</label>
 						    <input type="text" name="departmentNo" readonly value="${d.departmentNo}" class="form-control" id="departmentNo" >

@@ -66,16 +66,13 @@ public class DepartmentController {
 	}
 	
 	@PostMapping("update")
-	public void update() {
-		DepartmentDTO departmentDTO = new DepartmentDTO();
-		departmentDTO.setDepartmentNo("070");
-		departmentDTO.setDepartmentName("고고학");
-		departmentDTO.setCategory("예체능");
-		departmentDTO.setOpenYn("Y");
-		departmentDTO.setCapacity(40L);
+	public String update(DepartmentDTO departmentDTO) {
+		System.out.println(departmentDTO);
+	
 		int result = departmentService.update(departmentDTO);
+		System.out.println(result);
 		
-		System.out.println("희망 값 : 1 , 실제값 :"+ result);
+		return "redirect:./list";
 		
 	}
 
