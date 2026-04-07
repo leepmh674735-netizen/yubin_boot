@@ -57,6 +57,11 @@
 		                    	</c:forEach>
                     		</tbody>
                     	</table>
+                    	
+                    	<div>
+                    		<a href="./create">학과등록</a>
+                    	</div>
+                    	
                     </div>
                     </div>
                     <!-- 테이블 DIV 끝 -->
