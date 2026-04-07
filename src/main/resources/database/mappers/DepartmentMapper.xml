@@ -13,8 +13,39 @@
   	</select>
   	
   	<select id="detail" parameterType="java.lang.String" resultType="com.winter.app.departments.DepartmentDTO">
+  		<!-- String, Primitive Type 은 DAO에 보낸 변수명을 #{변수명} 작성 -->
   		SELECT * FROM TB_DEPARTMENT WHERE DEPARTMENT_NO = #{num}
   	</select>
+  	<!-- INSERT, UPDATE, DELETE는 resultType이 존재 X -->
+  	<!-- 결과물은 숫자(int)로 리턴을 함  -->
+  	<insert id="create" parameterType="com.winter.app.departments.DepartmentDTO">
+  		INSERT INTO TB_DEPARTMENT  
+  		<!-- Bean의 Getter의 이름을 #{}에 작성 -->
+  		VALUES 
+  		(
+  			#{departmentNo}, 
+  			#{departmentName}, 
+  			#{category}, 
+  			#{openYn}, 
+  			#{capacity}
+  		)
+  			
+  	</insert>
+  	
+  	<delete id="delete" parameterType="com.winter.app.departments.DepartmentDTO">
+  		DELETE TB_DEPARTMENT WHERE DEPARTMENT_NO=#{departmentNo}
+  	</delete>
+  	
+  	<update id="update" parameterType="com.winter.app.departments.DepartmentDTO">
+  		UPDATE TB_DEPARTMENT 
+  		SET
+  			DEPARTMENT_NAME=#{departmentName},
+  			CATEGORY=#{category},
+  			OPEN_YN=#{openYn},
+  			CAPACITY=#{capacity}
+  		WHERE DEPARTMENT_NO=#{departmentNo}
+  	</update>
+  	
   	
   
   </mapper>
