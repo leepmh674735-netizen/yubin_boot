@@ -1,17 +1,29 @@
 package com.winter.app.board.notice;
 
+import com.winter.app.Kosmo163BootApplication;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/notice/*")
 public class NoticeController {
+
 	@Autowired
 	private NoticeService noticeService;
+
+    
 	
-	public void list()throws Exception{
-		
+	@GetMapping("list")
+	public String list(Model model)throws Exception{
+		List<NoticeDTO> ar = noticeService.list();
+		model.addAttribute("list", ar);
+		return "board/list";
 	}
 
 }

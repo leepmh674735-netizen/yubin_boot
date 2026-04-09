@@ -21,12 +21,27 @@ class NoticeMapperTest {
 
 	@Test
 	void testCreate() throws Exception {
-		NoticeDTO noticeDTO = new NoticeDTO();
-		noticeDTO.setBoardTitle("title");
-		noticeDTO.setBoardContents("contents");
-		noticeDTO.setBoardWriter("P002");
-		int result= noticeMapper.create(noticeDTO);
-		assertEquals(1, result);
+		int idx=1;
+		for(int i=0;i<110;i++) {
+			NoticeDTO noticeDTO = new NoticeDTO();
+			noticeDTO.setBoardTitle("title"+i);
+			noticeDTO.setBoardContents("contents"+i);
+			noticeDTO.setBoardWriter("P00"+idx);
+			int result= noticeMapper.create(noticeDTO);
+			idx++;
+			if(idx>9) {
+				idx=1;
+			}
+			
+			if(i%10==0) {
+				
+				Thread.sleep(1000);
+			}
+			
+		}
+		
+		System.out.println("finish");
+		
 	}
 
 }

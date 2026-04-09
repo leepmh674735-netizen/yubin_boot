@@ -6,7 +6,11 @@
   <mapper namespace="com.winter.app.board.notice.NoticeMapper">
   	<!-- list -->
   	<select id="list" resultType="NoticeDTO">
-  		SELECT * FROM TB_NOTICE
+  		<![CDATA[
+  		SELECT * FROM TB_NOTICE 
+		WHERE BOARD_NUM>(SELECT MAX(BOARD_NUM)-10 FROM TB_NOTICE) AND  BOARD_NUM <=(SELECT MAX(BOARD_NUM) FROM TB_NOTICE)
+		ORDER BY BOARD_NUM DESC
+		]]>
   	</select>
 
     <!-- create -->	

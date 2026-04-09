@@ -19,7 +19,49 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Notice List Page</h1>
+                    <h1 class="h3 mb-4 text-gray-800">공지사항</h1>
+                    
+                    <!-- 테이블 DIV 시작 -->
+                    <div class="row justify-content-center">
+                    <div class="col-6">
+                    	<table class="table">
+                    		<thead class="thead-dark">
+                    			<tr>
+                    				<th>No</th>
+                    				<th>Title</th>
+                    				<th>Writer</th>
+                    				<th>Date</th>
+                    				<th>Hit</th>
+                    			</tr>
+                    		</thead>
+                    		<tbody>
+		                    	<c:forEach items="${list}" var="d">
+		                    		<tr>
+		                    			<td>${d.boardNum}</td>
+		                    			<td>${d.boardTitle}</td>
+		                    			<td>${d.boardWriter}</td>
+		                    			<td>${d.boardDate}</td>
+		                    			<td>${d.boardHit}</td>
+		                    			
+<%-- 		                    			<c:if test="${d.openYn ne 'Y'}">
+		                    			<td>OPEN</td>
+		                    			</c:if>
+		                    			<c:if test="${d.openYn eq 'N'}">
+		                    			<td>CLOSE</td>
+		                    			</c:if> --%>
+		                    			
+		                    		</tr>
+		                    	</c:forEach>
+                    		</tbody>
+                    	</table>
+                    	
+                    	<div>
+                    		<a href="./create">공지 등록</a>
+                    	</div>
+                    	
+                    </div>
+                    </div>
+                    <!-- 테이블 DIV 끝 -->
 
                 </div>
                 <!-- End Page container-fluid -->
