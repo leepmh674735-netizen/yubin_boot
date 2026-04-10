@@ -58,8 +58,8 @@
                     	<div>
                     	<nav aria-label="Page navigation example">
 						  <ul class="pagination">
-						    <li class="page-item">
-						      <a class="page-link" href="#" aria-label="Previous">
+						    <li class="page-item ${pager.pre?'':'disabled'}">
+						      <a class="page-link" href="./list?page=${pager.pre?pager.start-1:pager.start}" aria-label="Previous">
 						        <span aria-hidden="true">&laquo;</span>
 						      </a>
 						    </li>
@@ -67,8 +67,8 @@
                     			<li class="page-item"><a class="page-link" href="./list?page=${i}">${i}</a></li>
                     			</c:forEach>
 						    
-						    <li class="page-item">
-						      <a class="page-link" href="#" aria-label="Next">
+						    <li class="page-item ${pager.next?'':'disabled'}">
+						      <a class="page-link" href="./list?page=${pager.next?pager.end+1:pager.end}" aria-label="Next">
 						        <span aria-hidden="true">&raquo;</span>
 						      </a>
 						    </li>

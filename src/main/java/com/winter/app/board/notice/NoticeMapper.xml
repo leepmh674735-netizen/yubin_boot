@@ -9,7 +9,7 @@
   	</select>
   
   	<!-- list -->
-  	<select id="list" resultType="NoticeDTO" parameterType="java.util.Map">
+  	<select id="list" resultType="NoticeDTO" parameterType="Pager">
   		<![CDATA[
 			SELECT * FROM
 				(
@@ -18,7 +18,7 @@
 						SELECT * FROM TB_NOTICE ORDER BY BOARD_NUM DESC
 					) T
 				)
-			WHERE R BETWEEN #{begin} AND #{end}
+			WHERE R BETWEEN #{first} AND #{last}
 		]]>
   	</select>
 

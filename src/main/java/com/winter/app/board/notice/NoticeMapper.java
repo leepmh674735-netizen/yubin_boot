@@ -5,13 +5,15 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.winter.app.page.Pager;
+
 @Mapper
 public interface NoticeMapper {
 	
 	public Long getCount()throws Exception;
 	
 	//list
-	public List<NoticeDTO> list(Map<String, Long> map)throws Exception;
+	public List<NoticeDTO> list(Pager pager)throws Exception;
 	
 	//detail
 	public NoticeDTO detail(NoticeDTO noticeDTO)throws Exception;
