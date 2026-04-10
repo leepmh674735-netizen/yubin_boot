@@ -17,5 +17,12 @@ public class Pager {
 	
 	//JSP에 출력할 끝번호
 	private Long end;
+	
+	public Long getPage() {
+		if(this.page==null) {
+			this.page=1L;
+		}
+		return this.page;
+	}
 
 }
