@@ -10,6 +10,7 @@ import lombok.ToString;
 public class Pager {
 	
 	private String search;
+	private String kind;
 	
 	//페이지 번호
 	private Long page;

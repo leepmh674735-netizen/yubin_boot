@@ -5,7 +5,14 @@
   
   <mapper namespace="com.winter.app.board.notice.NoticeMapper">
   	<sql id="search">
-  		WHERE BOARD_TITLE LIKE '%'||#{search}||'%'
+  		WHERE 
+		<choose>
+			<when test="kind=='v2'">BOARD_CONTENTS</when>
+			<when test="kind=='v3'">BOARD_WRITER</when>
+			<otherwise>BOARD_TITLE</otherwise>
+		</choose>
+  		
+  		LIKE '%'||#{search}||'%'
   	</sql>
   
   	<select id="getCount" resultType="Long" parameterType="Pager">
